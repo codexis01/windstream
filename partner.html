@@ -59,67 +59,99 @@
 			/* background-color: #838583; */
 			border: 2px solid rgb(0, 0, 0);
 		}
+
 		.container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
-            background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+     /* Centering the Login Section */
+	 #partner-login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+        padding: 20px;
+    }
+
+    .login-container {
+        width: 100%;
+        max-width: 400px;
+        background:white;
+        backdrop-filter: blur(10px);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        color: #000000;
+    }
+
+    .login-box h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #ff9800;
+    }
+
+    .login-box p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .field {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    .field label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .field input {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+    .button.primary {
+        width: 100%;
+        padding: 12px;
+        background: #ff9800;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .button.primary:hover {
+        background: #e68900;
+    }
+
+    p a {
+        color: #ff9800;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    p a:hover {
+        text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 480px) {
+        .login-container {
+            max-width: 100%;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
         }
-        h1, h2,h3 {
-            color: #333;
-            text-align: center;
-        }
-        .job-list, .benefits-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .job-list li, .benefits-list li {
-            background: #007BFF;
-            color: #fff;
-            margin: 10px;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: center;
-            flex: 1 1 calc(33.333% - 20px);
-            max-width: 300px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .job-list li:hover, .benefits-list li:hover {
-            transform: scale(1.05);
-        }
-        .apply-btn {
-            display: block;
-            width: fit-content;
-            margin: 20px auto;
-            background: #28a745;
-            color: #fff;
-            padding: 12px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 1.2em;
-            transition: background 0.3s ease-in-out;
-        }
-        .apply-btn:hover {
-            background: #218838;
-        }
-        @media (max-width: 768px) {
-            .job-list li, .benefits-list li {
-                flex: 1 1 calc(50% - 20px);
-            }
-        }
-        @media (max-width: 480px) {
-            .job-list li, .benefits-list li {
-                flex: 1 1 100%;
-            }
-        }
+    }
 	</style>
 	<body class="is-preload">
 
@@ -152,40 +184,31 @@
 			</nav>
 		</header>
 
-		
-		<div class="container" style="margin-top: 100px;">
-            <h2>Careers at Windstream</h2>
-            <p style="text-align:center;">Join Windstream and be part of a dynamic team shaping the future of internet, TV, and digital services.</p>
-            
-            <h3>Why Work With Us?</h3>
-            <p style="text-align:center;">At Windstream, we foster an environment of growth, innovation, and collaboration. We believe in empowering our employees with opportunities to learn, grow, and contribute to industry-leading solutions.</p>
-            
-            <h3>Career Opportunities</h3>
-            <ul class="job-list">
-                <li>Network Engineers</li>
-                <li>IT Support Specialists</li>
-                <li>Web & App Developers</li>
-                <li>Digital Marketing Experts</li>
-                <li>Sales Representatives</li>
-                <li>Customer Support Executives</li>
-                <li>Project Managers</li>
-                <li>Business Development Executives</li>
-                <li>Client Relationship Managers</li>
-            </ul>
-            
-            <h2>Benefits of Working with Windstream</h2>
-            <ul class="benefits-list">
-                <li>Competitive salary packages</li>
-                <li>Professional growth and development opportunities</li>
-                <li>Health and wellness benefits</li>
-                <li>Flexible work culture</li>
-                <li>A collaborative and innovative work environment</li>
-            </ul>
-            
-            <h2>How to Apply?</h2>
-            <p style="text-align:center;">We are always on the lookout for talented individuals. If you are passionate about technology and digital services, we would love to hear from you.</p>
-            <a href="mailto:info@windstream.in" class="apply-btn">Apply Now</a>
+<!-- Partner Login Section -->
+<section id="partner-login">
+    <div class="login-container">
+        <div class="login-box">
+            <header>
+                <h2>Partner Login</h2>
+                <p>Access your dashboard securely</p>
+            </header>
+            <form method="post" action="partner_login.php">
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required />
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required />
+                </div>
+                <div class="field">
+                    <input type="submit" value="Login" class="button primary" />
+                </div>
+            </form>
+            <p><a href="#">Forgot Password?</a></p>
         </div>
+    </div>
+</section>
 
 
 		<!-- Footer -->
